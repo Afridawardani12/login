@@ -5,7 +5,7 @@ session_start();
 $host_db    = "localhost";
 $user_db    = "root";
 $pass_db    = "";
-$nama_db    = "login";
+$nama_db    = "dblogin";
 $koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
 //atur variabel
 $err        = "";
@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
                 setcookie($cookie_name,$cookie_value,$cookie_time,"/");
 
                 $cookie_name = "cookie_password";
-                $cookie_value = md5($password);
+                $cookie_value = ($password);
                 $cookie_time = time() + (60 * 60 * 24 * 30);
                 setcookie($cookie_name,$cookie_value,$cookie_time,"/");
             }
